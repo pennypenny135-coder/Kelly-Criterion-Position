@@ -5,6 +5,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import NewPositionPage from './pages/NewPositionPage';
+import ZeroCostCalculatorPage from './pages/ZeroCostCalculatorPage';
 import PositionsPage from './pages/PositionsPage';
 import TradeHistoryPage from './pages/TradeHistoryPage';
 import SettingsPage from './pages/SettingsPage';
