@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 const NAV_ITEMS = [
   { to: '/', label: 'Calculator', icon: '🧮', exact: true },
+  { to: '/zero-cost', label: 'Zero Cost', icon: '🎯' }, // 👈 這裡加入了新頁面
   { to: '/positions', label: 'Positions', icon: '📊' },
   { to: '/history', label: 'Trade History', icon: '📋' },
   { to: '/settings', label: 'Settings', icon: '⚙️' },
