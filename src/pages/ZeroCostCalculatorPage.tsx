@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useStore from '../store/useStore';
+import { useStore } from '../store/useStore'; // 修正這裡
 
 export default function ZeroCostCalculatorPage() {
   const { positions } = useStore();
@@ -29,19 +29,10 @@ export default function ZeroCostCalculatorPage() {
   const nTargetCost = parseFloat(targetCost) || 0;
 
   // 計算邏輯
-  // 1. 0成本持倉需要的賣出股數: 總投入成本 / 現價
-  // 總投入 = nShares * nAvgCost
   const totalInvested = nShares * nAvgCost;
   const sharesToZeroCost = nCurrPrice > 0 ? Math.ceil(totalInvested / nCurrPrice) : 0;
   const isZeroCostPossible = nCurrPrice > 0 && totalInvested > 0;
 
-  // 2. 降低到目標均價的賣出股數公式:
-  // (N * Avg - S * Curr) / (N - S) = Target
-  // N * Avg - S * Curr = (N - S) * Target
-  // N * Avg - S * Curr = N * Target - S * Target
-  // S * Target - S * Curr = N * Target - N * Avg
-  // S * (Target - Curr) = N * (Target - Avg)
-  // S = N * (Avg - Target) / (Curr - Target)  (需 Curr > Target 且 Avg > Target)
   let sharesToTarget = 0;
   let isTargetPossible = false;
 
