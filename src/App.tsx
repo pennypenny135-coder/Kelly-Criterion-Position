@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<NewPositionPage />} />
           <Route path="/positions" element={<PositionsPage />} />
+          <Route path="/zero-cost" element={<ZeroCostCalculatorPage />} />
           <Route path="/history" element={<TradeHistoryPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
